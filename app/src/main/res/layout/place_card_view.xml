@@ -15,7 +15,7 @@
         android:padding="8dp">
 
         <ImageView
-            android:id="@+id/iv_client"
+            android:id="@+id/iv_place_image"
             android:layout_width="64dp"
             android:layout_height="64dp"
             android:contentDescription="Imagen del lugar"
@@ -29,16 +29,16 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/tv_name"
+                android:id="@+id/tv_place_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="18sp"
                 android:textStyle="bold"
-                android:textColor="@android:color/black"
+                android:textColor="@color/material_on_background_emphasis_high_type"
                 tools:text="Ukumari" />
 
             <TextView
-                android:id="@+id/tv_address"
+                android:id="@+id/tv_place_desc"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
