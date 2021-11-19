@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">pAppseando</string>
+    <string name="Name_Registration">Nombres y Apellidos</string>
+    <string name="EmailAddress">Correo Electrónico</string>
+    <string name="Password">Password</string>
+    <string name="Confirm_Password">Confirm_Password</string>
 </resources>

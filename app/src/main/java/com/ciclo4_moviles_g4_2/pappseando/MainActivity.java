@@ -1,11 +1,13 @@
 package com.ciclo4_moviles_g4_2.pappseando;
 
+import android.content.Intent;
 import android.graphics.Color;
 
 import android.os.Bundle;
 import android.text.Html;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -25,6 +27,10 @@ public class MainActivity extends AppCompatActivity {
     private int[] image={R.drawable.inicio,R.drawable.prueba,R.drawable.prueba,R.drawable.prueba};
     private int[] colorBackground, colorDot;
     private TextView[] dots;
+
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -60,10 +66,15 @@ public class MainActivity extends AppCompatActivity {
                     viewPager.setCurrentItem(next);
                 }else{
                     Toast.makeText(getApplicationContext(),"obtener promocion",Toast.LENGTH_LONG).show();
+                    Intent i = new Intent(MainActivity.this, Registro.class);
+                    startActivity(i);
                 }
+
 
             }
         });
+
+
     }
 
     private int getItem(int i){
@@ -135,5 +146,9 @@ public class MainActivity extends AppCompatActivity {
         public void onPageScrollStateChanged(int i) {
 
         }
+
     };
+
+
+
 }

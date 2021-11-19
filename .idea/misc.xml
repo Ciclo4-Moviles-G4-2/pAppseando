@@ -3,6 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/MISION TIC 2022/CICLO 4/PROGRAMACION/PROYECTO CICLO 4/PAPPSEANDO/PAppSeando_2/app/src/main/res/drawable/borders_btn.xml" value="0.19166666666666668" />
+        <entry key="..\:/MISION TIC 2022/CICLO 4/PROGRAMACION/PROYECTO CICLO 4/PAPPSEANDO/PAppSeando_2/app/src/main/res/layout/activity_login.xml" value="0.17552083333333332" />
+        <entry key="..\:/MISION TIC 2022/CICLO 4/PROGRAMACION/PROYECTO CICLO 4/PAPPSEANDO/PAppSeando_2/app/src/main/res/layout/activity_main.xml" value="0.17552083333333332" />
+        <entry key="..\:/MISION TIC 2022/CICLO 4/PROGRAMACION/PROYECTO CICLO 4/PAPPSEANDO/PAppSeando_2/app/src/main/res/layout/activity_registro.xml" value="0.25" />
+        <entry key="..\:/MISION TIC 2022/CICLO 4/PROGRAMACION/PROYECTO CICLO 4/PAPPSEANDO/PAppSeando_2/app/src/main/res/layout/fragment_slider.xml" value="0.17552083333333332" />
         <entry key="..\:/MisionTic/pAppseando/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/MisionTic/pAppseando/app/src/main/res/layout/fragment_slider.xml" value="0.1" />
       </map>
