@@ -1,7 +1,5 @@
 package com.ciclo4_moviles_g4_2.pappseando;
 
-
-
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;

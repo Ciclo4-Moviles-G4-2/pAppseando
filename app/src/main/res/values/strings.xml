@@ -2,6 +2,8 @@
     <string name="app_name">pAppseando</string>
     <string name="Name_Registration">Nombres y Apellidos</string>
     <string name="EmailAddress">Correo Electrónico</string>
-    <string name="Password">Password</string>
-    <string name="Confirm_Password">Confirm_Password</string>
+    <string name="Password">Contraseña</string>
+    <string name="Confirm_Password">Confirmar Contraseña</string>
+    <string name="default_place_description">Descripción del lugar</string>
+    <string name="default_place_name">Nombre del lugar</string>
 </resources>

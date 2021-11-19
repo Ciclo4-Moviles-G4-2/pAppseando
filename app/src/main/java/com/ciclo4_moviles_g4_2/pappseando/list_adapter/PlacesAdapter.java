@@ -1,4 +1,8 @@
-package com.ciclo4_moviles_g4_2.pappseando.adapter;
+package com.ciclo4_moviles_g4_2.pappseando.list_adapter;
+
+/* Código Java del adaptador usado en el RecyclerView para listar los lugares
+   Implementado por: Mauricio Moreno
+*/
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -14,20 +18,18 @@ import java.util.List;
 
 public class PlacesAdapter extends RecyclerView.Adapter<PlacesAdapter.ViewHolder> {
 
-    private List<Places> listaLugares;
-    private Context context;
-    private LayoutInflater inflater;
+    private final List<Place> listaLugares;
+    private final LayoutInflater inflater;
 
-    public PlacesAdapter(List<Places> listaLugares, Context context) {
+    public PlacesAdapter(List<Place> listaLugares, Context context) {
         this.inflater = LayoutInflater.from(context);
         this.listaLugares = listaLugares;
-        this.context = context;
     }
 
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = inflater.inflate(R.layout.place_card_view, null);
+        View view = inflater.inflate(R.layout.place_card_view, null, false);
         return new ViewHolder(view);
     }
 
@@ -42,9 +44,9 @@ public class PlacesAdapter extends RecyclerView.Adapter<PlacesAdapter.ViewHolder
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
-        private TextView txtNombre;
-        private TextView txtDescripcion;
-        private ImageView imgFoto;
+        private final TextView txtNombre;
+        private final TextView txtDescripcion;
+        private final ImageView imgFoto;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -53,10 +55,10 @@ public class PlacesAdapter extends RecyclerView.Adapter<PlacesAdapter.ViewHolder
             imgFoto = itemView.findViewById(R.id.iv_place_image);
         }
 
-        void bindData(Places item) {
-            txtNombre.setText(item.getNombreLugar());
-            txtDescripcion.setText(item.getDescripcionLugar());
-            imgFoto.setImageURI(item.getFotoLugar());
+        void bindData(Place item) {
+            txtNombre.setText(item.getNombre());
+            txtDescripcion.setText(item.getDescripcion());
+            imgFoto.setImageResource(item.getFoto());
         }
     }
 }

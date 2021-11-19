@@ -65,12 +65,9 @@ public class MainActivity extends AppCompatActivity {
                 if(next<title.length){
                     viewPager.setCurrentItem(next);
                 }else{
-                    Toast.makeText(getApplicationContext(),"obtener promocion",Toast.LENGTH_LONG).show();
                     Intent i = new Intent(MainActivity.this, Registro.class);
                     startActivity(i);
                 }
-
-
             }
         });
 
@@ -133,11 +130,11 @@ public class MainActivity extends AppCompatActivity {
 
             if(position==title.length-1){
                 btnNext.setText("Finalizar");
-                btnBack.setText("salir");
+                btnBack.setText("Salir");
 
             }else{
-                btnNext.setText("siguiente");
-                btnBack.setText("atras");
+                btnNext.setText("Siguiente");
+                btnBack.setText("Atras");
             }
 
         }

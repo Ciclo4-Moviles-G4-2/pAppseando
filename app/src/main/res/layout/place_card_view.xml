@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.google.android.material.card.MaterialCardView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:clickable="true"
     android:focusable="true"
-    android:onClick="goToForm" >
+    android:onClick="goToForm"
+    app:cardElevation="30dp"
+    app:cardCornerRadius="10dp" >
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -18,7 +20,6 @@
             android:id="@+id/iv_place_image"
             android:layout_width="64dp"
             android:layout_height="64dp"
-            android:contentDescription="Imagen del lugar"
             android:src="@android:drawable/ic_menu_gallery" />
 
         <LinearLayout
@@ -35,7 +36,7 @@
                 android:textSize="18sp"
                 android:textStyle="bold"
                 android:textColor="@color/material_on_background_emphasis_high_type"
-                tools:text="Ukumari" />
+                tools:text="@string/default_place_name" />
 
             <TextView
                 android:id="@+id/tv_place_desc"
@@ -44,7 +45,7 @@
                 android:layout_marginTop="8dp"
                 android:textSize="12sp"
                 android:textStyle="italic"
-                tools:text="Parque didáctico - Km 14 Vía a Cerritos - Pereira" />
+                tools:text="@string/default_place_description" />
 
             <com.google.android.material.divider.MaterialDivider
                 android:layout_width="match_parent"

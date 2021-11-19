@@ -61,7 +61,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:ems="10"
-        android:hint="Confirm Password"
+        android:hint="Confirmar Password"
         android:inputType="textPassword"
         android:minHeight="48dp"
         android:textAlignment="center"
@@ -99,8 +99,8 @@
 
     <Button
         android:id="@+id/btn_Registro"
-        android:layout_width="142dp"
-        android:layout_height="48dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginBottom="116dp"
         android:background="@drawable/borders_btn"
         android:onClick="siguiente"
@@ -120,7 +120,7 @@
         android:layout_width="268dp"
         android:layout_height="48dp"
         android:layout_marginBottom="68dp"
-        android:text="Acepto terminos y condiciones."
+        android:text="Acepto términos y condiciones."
         android:textSize="16sp"
         app:layout_constraintBottom_toTopOf="@+id/btn_Registro"
         app:layout_constraintEnd_toEndOf="parent"

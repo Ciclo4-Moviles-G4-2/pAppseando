@@ -18,9 +18,9 @@
         <TextView
             android:id="@+id/Title_Regist"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:text="PAPPSEANDO"
-            android:textAlignment="center"
+            android:gravity="center"
             android:textColor="#FDFCFC"
             android:textSize="34sp"
             android:textStyle="bold" />
@@ -64,7 +64,7 @@
         android:layout_height="48dp"
         android:layout_marginBottom="76dp"
         android:background="@drawable/borders_btn"
-        android:text="Inciar Sesión"
+        android:text="Iniciar Sesión"
         android:textAlignment="center"
         android:textSize="16sp"
         android:textStyle="bold"
