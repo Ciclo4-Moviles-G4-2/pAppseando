@@ -16,10 +16,11 @@ import com.ciclo4_moviles_g4_2.pappseando.R;
 
 import java.util.List;
 
-public class PlacesAdapter extends RecyclerView.Adapter<PlacesAdapter.ViewHolder> {
+public class PlacesAdapter extends RecyclerView.Adapter<PlacesAdapter.ViewHolder> implements View.OnClickListener {
 
     private final List<Place> listaLugares;
     private final LayoutInflater inflater;
+    private View.OnClickListener listener;
 
     public PlacesAdapter(List<Place> listaLugares, Context context) {
         this.inflater = LayoutInflater.from(context);
@@ -29,7 +30,8 @@ public class PlacesAdapter extends RecyclerView.Adapter<PlacesAdapter.ViewHolder
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = inflater.inflate(R.layout.place_card_view, null, false);
+        View view = inflater.inflate(R.layout.place_card_view, parent, false);
+        view.setOnClickListener(this);
         return new ViewHolder(view);
     }
 
@@ -41,6 +43,17 @@ public class PlacesAdapter extends RecyclerView.Adapter<PlacesAdapter.ViewHolder
     @Override
     public int getItemCount() {
         return listaLugares.size();
+    }
+
+    public void setOnClickListener(View.OnClickListener listener) {
+        this.listener = listener;
+    }
+
+    @Override
+    public void onClick(View v) {
+        if (listener != null) {
+            listener.onClick(v);
+        }
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {

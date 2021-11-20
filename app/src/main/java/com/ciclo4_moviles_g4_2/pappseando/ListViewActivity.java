@@ -6,7 +6,6 @@ package com.ciclo4_moviles_g4_2.pappseando;
 
 import android.os.Bundle;
 import android.view.View;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -15,7 +14,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.ciclo4_moviles_g4_2.pappseando.list_adapter.Place;
 import com.ciclo4_moviles_g4_2.pappseando.list_adapter.PlacesAdapter;
-import com.google.android.material.card.MaterialCardView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -48,6 +46,11 @@ public class ListViewActivity extends AppCompatActivity {
         }
 
         PlacesAdapter adaptadorLugares = new PlacesAdapter(lugares, this);
+        adaptadorLugares.setOnClickListener(v -> {
+            String nombreLugar = lugares.get(rvLugares.getChildAdapterPosition(v)).getNombre();
+            goToForm(nombreLugar);
+        });
+
         rvLugares.setAdapter(adaptadorLugares);
     }
 
@@ -59,9 +62,8 @@ public class ListViewActivity extends AppCompatActivity {
         //startActivity(intent);
     }
 
-    public void goToForm(View view) {
-        TextView nombre = findViewById(R.id.tv_place_name);
-        Toast.makeText(this, "Ha elegido " + nombre.getText(), Toast.LENGTH_SHORT).show();
+    public void goToForm(String cadena) {
+        Toast.makeText(getApplicationContext(), "Ha elegido: " + cadena, Toast.LENGTH_SHORT).show();
         //Intent intent = new Intent(this, FormViewActivity.class);
         //startActivity(intent);
     }
