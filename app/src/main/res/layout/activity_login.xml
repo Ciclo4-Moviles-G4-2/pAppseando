@@ -37,7 +37,7 @@
         android:inputType="textPassword"
         android:minHeight="48dp"
         android:textAlignment="center"
-        app:layout_constraintBottom_toTopOf="@+id/btn_Registro"
+        app:layout_constraintBottom_toTopOf="@+id/btn_inicio"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.507"
         app:layout_constraintStart_toStartOf="parent"
@@ -59,7 +59,7 @@
         app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 
     <Button
-        android:id="@+id/btn_Registro"
+        android:id="@+id/btn_inicio"
         android:layout_width="170dp"
         android:layout_height="48dp"
         android:layout_marginBottom="76dp"

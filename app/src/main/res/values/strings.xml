@@ -6,4 +6,8 @@
     <string name="Confirm_Password">Confirmar Contraseña</string>
     <string name="default_place_description">Descripción del lugar</string>
     <string name="default_place_name">Nombre del lugar</string>
+    <string name="title_activity_maps">MapsActivity</string>
+    <string name="descripition">Descripición de, boton flotante</string>
+    <string name="title_activity_maps_activity2borr_r">MapsActivity2borrR</string>
+    <string name="title_activity_maps_activity2borrarr">MapsActivity2borrarr</string>
 </resources>
