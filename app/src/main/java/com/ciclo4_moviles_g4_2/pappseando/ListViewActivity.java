@@ -4,6 +4,7 @@ package com.ciclo4_moviles_g4_2.pappseando;
    Implementado por: Mauricio Moreno
 */
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
@@ -24,10 +25,10 @@ public class ListViewActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_view);
-        fillPlaces();
+        loadPlacesOnRecyclerView();
     }
 
-    private void fillPlaces() {
+    private void loadPlacesOnRecyclerView() {
         RecyclerView rvLugares = findViewById(R.id.rv_places);
         rvLugares.setLayoutManager(new LinearLayoutManager(this));
 
@@ -54,14 +55,13 @@ public class ListViewActivity extends AppCompatActivity {
         rvLugares.setAdapter(adaptadorLugares);
     }
 
-    //TODO: Navegación a vista de mapa y ficha de lugares pendiente
-
     public void goToMap(View view) {
-        Toast.makeText(this, "Ha elegido ver el mapa", Toast.LENGTH_SHORT).show();
-        //Intent intent = new Intent(this, MapViewActivity.class);
-        //startActivity(intent);
+        //Toast.makeText(this, "Ha elegido ver el mapa", Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(this, MapsActivity.class);
+        startActivity(intent);
     }
 
+    //TODO: Navegación a ficha de lugares pendiente
     public void goToForm(String cadena) {
         Toast.makeText(getApplicationContext(), "Ha elegido: " + cadena, Toast.LENGTH_SHORT).show();
         //Intent intent = new Intent(this, FormViewActivity.class);
