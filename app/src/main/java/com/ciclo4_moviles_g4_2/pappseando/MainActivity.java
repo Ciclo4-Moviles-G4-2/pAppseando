@@ -65,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
                 if(next<title.length){
                     viewPager.setCurrentItem(next);
                 }else{
-                    Intent i = new Intent(MainActivity.this, Registro.class);
+                    Intent i = new Intent(MainActivity.this, Login.class);
                     startActivity(i);
                 }
             }

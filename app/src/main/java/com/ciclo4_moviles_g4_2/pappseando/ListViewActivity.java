@@ -61,10 +61,10 @@ public class ListViewActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    //TODO: Navegación a ficha de lugares pendiente
+
     public void goToForm(String cadena) {
         Toast.makeText(getApplicationContext(), "Ha elegido: " + cadena, Toast.LENGTH_SHORT).show();
-        //Intent intent = new Intent(this, FormViewActivity.class);
-        //startActivity(intent);
+        Intent intent = new Intent(this, FormPlaceActivity.class);
+        startActivity(intent);
     }
 }

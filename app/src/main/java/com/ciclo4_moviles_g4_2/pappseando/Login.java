@@ -24,4 +24,9 @@ public class Login extends AppCompatActivity {
             }
         });
     }
+
+    public void goToRegistro(View v) {
+        Intent i = new Intent(Login.this,Registro.class);
+        startActivity(i);
+    }
 }
