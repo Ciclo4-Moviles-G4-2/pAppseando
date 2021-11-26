@@ -1,4 +1,4 @@
-package com.ciclo4_moviles_g4_2.pappseando;
+package com.ciclo4_moviles_g4_2.pappseando.views;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,7 +8,9 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
-public class Registro extends AppCompatActivity {
+import com.ciclo4_moviles_g4_2.pappseando.R;
+
+public class RegisterActivity extends AppCompatActivity {
     // Validación de datos en Registro de Usuario //
     private EditText et_Name;
     private EditText et_mail;
@@ -19,7 +21,7 @@ public class Registro extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_registro);
+        setContentView(R.layout.activity_register);
 
         //        Inicio Validación de Datos en Registro de Usuario //
         et_Name=(EditText) findViewById(R.id.Name_Registration);
@@ -37,24 +39,16 @@ public class Registro extends AppCompatActivity {
         String mail= et_mail.getText().toString();
         String password= et_Password.getText().toString();
         String cpassword= et_CPassword.getText().toString();
-        if (nombre.length() == 0) {
-            Toast.makeText(this, "Ingresa tu Nombre", Toast.LENGTH_LONG).show();
-        }
-        if (mail.length() == 0) {
-            Toast.makeText(this, "Ingresa tu E-mail", Toast.LENGTH_LONG).show();
-        }
-        if (password.length() == 0) {
-            Toast.makeText(this, "Ingresa una contraseña", Toast.LENGTH_LONG).show();
-        }
-        if (cpassword.length() == 0) {
-            Toast.makeText(this, "Confirma tu contraseña", Toast.LENGTH_LONG).show();
-        }
-        if (nombre.length() != 0 && mail.length() != 0 && password.length() != 0 && cpassword.length() != 0) {
-            Toast.makeText(this, "Registro en Proceso", Toast.LENGTH_LONG).show();
-            Intent i= new Intent(Registro.this, Login.class);
-            startActivity(i);
-            Toast.makeText(getApplicationContext(),"Registro Exitoso",Toast.LENGTH_LONG).show();
 
+        if (nombre.length() != 0 && mail.length() != 0 && password.length() != 0 && cpassword.length() != 0) {
+            Toast.makeText(this, "Registro en Proceso", Toast.LENGTH_SHORT).show();
+            Intent i= new Intent(RegisterActivity.this, LoginActivity.class);
+            startActivity(i);
+            Toast.makeText(getApplicationContext(),"Registro Exitoso",Toast.LENGTH_SHORT).show();
+
+        }
+        else {
+            Toast.makeText(this, "Hay campos vacíos. Asegúrate de llenar todos los campos", Toast.LENGTH_SHORT).show();
         }
     }
     //        Fin Método Validadión de Datos en Registro de Usuario //

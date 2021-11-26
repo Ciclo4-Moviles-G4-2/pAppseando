@@ -1,4 +1,4 @@
-package com.ciclo4_moviles_g4_2.pappseando.list_adapter;
+package com.ciclo4_moviles_g4_2.pappseando.adapters;
 
 /* Código Java del adaptador usado en el RecyclerView para listar los lugares
    Implementado por: Mauricio Moreno
@@ -18,11 +18,11 @@ import java.util.List;
 
 public class PlacesAdapter extends RecyclerView.Adapter<PlacesAdapter.ViewHolder> implements View.OnClickListener {
 
-    private final List<Place> listaLugares;
+    private final List<PlaceVO> listaLugares;
     private final LayoutInflater inflater;
     private View.OnClickListener listener;
 
-    public PlacesAdapter(List<Place> listaLugares, Context context) {
+    public PlacesAdapter(List<PlaceVO> listaLugares, Context context) {
         this.inflater = LayoutInflater.from(context);
         this.listaLugares = listaLugares;
     }
@@ -68,7 +68,7 @@ public class PlacesAdapter extends RecyclerView.Adapter<PlacesAdapter.ViewHolder
             imgFoto = itemView.findViewById(R.id.iv_place_image);
         }
 
-        void bindData(Place item) {
+        void bindData(PlaceVO item) {
             txtNombre.setText(item.getNombre());
             txtDescripcion.setText(item.getDescripcion());
             imgFoto.setImageResource(item.getFoto());

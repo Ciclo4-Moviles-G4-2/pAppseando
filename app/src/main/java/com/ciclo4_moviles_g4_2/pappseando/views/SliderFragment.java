@@ -1,4 +1,4 @@
-package com.ciclo4_moviles_g4_2.pappseando;
+package com.ciclo4_moviles_g4_2.pappseando.views;
 
 import android.os.Bundle;
 
@@ -12,6 +12,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+
+import com.ciclo4_moviles_g4_2.pappseando.R;
 
 public class SliderFragment extends Fragment {
     View viewAlejo;

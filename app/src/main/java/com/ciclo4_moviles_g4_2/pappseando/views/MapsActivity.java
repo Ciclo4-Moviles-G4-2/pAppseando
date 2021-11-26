@@ -1,4 +1,4 @@
-package com.ciclo4_moviles_g4_2.pappseando;
+package com.ciclo4_moviles_g4_2.pappseando.views;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -13,6 +13,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import com.ciclo4_moviles_g4_2.pappseando.R;
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -61,7 +63,6 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         agregar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                mensaje();
                 Intent i = new Intent(MapsActivity.this,ListViewActivity.class);
                 startActivity(i);
             }
