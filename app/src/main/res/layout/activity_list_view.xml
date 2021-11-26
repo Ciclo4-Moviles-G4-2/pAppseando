@@ -23,9 +23,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
                 android:background="@color/purple_500"
-                android:elevation="0dp"
                 app:navigationIconTint="@color/white"
-                app:navigationIcon="@drawable/ic_menu"
+                app:navigationIcon="@drawable/ic_list_places"
                 app:title="Mis lugares - Lista" />
 
         </com.google.android.material.appbar.AppBarLayout>
@@ -41,7 +40,7 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_places"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
+            android:layout_height="match_parent"
             android:layout_marginTop="4dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

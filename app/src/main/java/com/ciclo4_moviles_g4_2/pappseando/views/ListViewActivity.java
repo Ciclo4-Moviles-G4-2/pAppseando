@@ -82,7 +82,8 @@ public class ListViewActivity extends AppCompatActivity {
         adaptadorLugares = new PlacesAdapter(lugares, this);
         adaptadorLugares.setOnClickListener(v -> {
             String nombreLugar = lugares.get(rvLugares.getChildAdapterPosition(v)).getNombre();
-            goToForm(nombreLugar);
+            String descLugar = lugares.get(rvLugares.getChildAdapterPosition(v)).getDescripcion();
+            goToForm(nombreLugar, descLugar);
         });
 
         rvLugares.setAdapter(adaptadorLugares);
@@ -95,9 +96,11 @@ public class ListViewActivity extends AppCompatActivity {
     }
 
 
-    public void goToForm(String cadena) {
-        Toast.makeText(getApplicationContext(), "Ha elegido: " + cadena, Toast.LENGTH_SHORT).show();
+    public void goToForm(String nombreLugar, String descLugar) {
+        Toast.makeText(getApplicationContext(), "Ha elegido: " + nombreLugar, Toast.LENGTH_SHORT).show();
         Intent intent = new Intent(this, FormPlaceActivity.class);
+        intent.putExtra("nombre", nombreLugar);
+        intent.putExtra("descripcion", descLugar);
         startActivity(intent);
     }
 }
