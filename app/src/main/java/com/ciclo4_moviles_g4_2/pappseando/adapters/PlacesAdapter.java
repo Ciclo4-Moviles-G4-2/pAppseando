@@ -15,6 +15,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.ciclo4_moviles_g4_2.pappseando.R;
 
 import java.util.List;
+import java.util.Timer;
 
 public class PlacesAdapter extends RecyclerView.Adapter<PlacesAdapter.ViewHolder> implements View.OnClickListener {
 

@@ -4,6 +4,8 @@ package com.ciclo4_moviles_g4_2.pappseando.views;
    Implementado por: Mauricio Moreno
 */
 
+import android.app.AlertDialog;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -32,38 +34,16 @@ public class ListViewActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_view);
+
         rvLugares = findViewById(R.id.rv_places);
         rvLugares.setLayoutManager(new LinearLayoutManager(this));
         loadPlacesOnRecyclerView();
-
-        ItemTouchHelper.SimpleCallback simpleCallback = new ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT) {
-            @Override
-            public boolean onMove(@NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder, @NonNull RecyclerView.ViewHolder target) {
-                return false;
-            }
-
-            @Override
-            public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int direction) {
-                int position = viewHolder.getAdapterPosition();
-                String nombreLugar = lugares.get(position).getNombre();
-
-                lugares.remove(position);
-                adaptadorLugares.notifyItemRemoved(position);
-                Toast.makeText(getApplicationContext(), "Se ha borrado el lugar '" + nombreLugar + "' satisfactoriamente", Toast.LENGTH_SHORT).show();
-            }
-
-            @Override
-            public int getSwipeDirs(@NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder) {
-
-                return super.getSwipeDirs(recyclerView, viewHolder);
-            }
-        };
-
-        ItemTouchHelper itemTouchHelper = new ItemTouchHelper(simpleCallback);
-        itemTouchHelper.attachToRecyclerView(rvLugares);
+        deletePlacesListener();
     }
 
     private void loadPlacesOnRecyclerView() {
+        //Carga/llenado de lugares en el Recycler View
+
         String[] nombreLugares = {"La Martina - Food Fast", "Parque del Café", "Mendihuacan Caribbean",
                 "Jardín Plaza", "PANACA", "Ukumari", "Plaza de Bolívar", "Piedra del Peñol", "Minas de sal",
                 "Caño Cristales", "Desierto de la Tatacoa", "Pantano de Vargas", "Puente de Boyacá"};
@@ -87,6 +67,44 @@ public class ListViewActivity extends AppCompatActivity {
         });
 
         rvLugares.setAdapter(adaptadorLugares);
+    }
+
+    private void deletePlacesListener() {
+        //Borrado de lugares de la lista mediante gesto swipe simple (deslizar a izquierda o derecha)
+
+        Context thisContext = this;
+
+        ItemTouchHelper.SimpleCallback simpleCallback = new ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT) {
+            @Override
+            public boolean onMove(@NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder, @NonNull RecyclerView.ViewHolder target) {
+                return false;
+            }
+
+            @Override
+            public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int direction) {
+                AlertDialog.Builder builder = new AlertDialog.Builder(thisContext);
+                int position = viewHolder.getAdapterPosition();
+                String nombreLugar = lugares.get(position).getNombre();
+
+                builder.setMessage("\n¿Estás seguro/a de eliminar el lugar '" + nombreLugar + "'?")
+                        .setTitle("Borrar lugar")
+                        .setPositiveButton("Sí", (dialog, which) -> {
+                            lugares.remove(position);
+                            adaptadorLugares.notifyItemRemoved(position);
+                            Toast.makeText(getApplicationContext(), "Se ha borrado el lugar '" + nombreLugar + "' satisfactoriamente", Toast.LENGTH_SHORT).show();
+                        })
+                        .setNegativeButton("Cancelar", (dialog, which) -> {
+                            dialog.cancel();
+                            rvLugares.setAdapter(adaptadorLugares);
+                        });
+
+                AlertDialog dialog = builder.create();
+                dialog.show();
+            }
+        };
+
+        ItemTouchHelper itemTouchHelper = new ItemTouchHelper(simpleCallback);
+        itemTouchHelper.attachToRecyclerView(rvLugares);
     }
 
     public void goToMap(View view) {
