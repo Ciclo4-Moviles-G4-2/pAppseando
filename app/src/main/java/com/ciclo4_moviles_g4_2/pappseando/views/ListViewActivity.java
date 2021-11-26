@@ -23,6 +23,7 @@ import com.ciclo4_moviles_g4_2.pappseando.adapters.PlacesAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.atomic.AtomicInteger;
 
 public class ListViewActivity extends AppCompatActivity {
 
@@ -38,7 +39,7 @@ public class ListViewActivity extends AppCompatActivity {
         rvLugares = findViewById(R.id.rv_places);
         rvLugares.setLayoutManager(new LinearLayoutManager(this));
         loadPlacesOnRecyclerView();
-        deletePlacesListener();
+        deletePlacesListener(this);
     }
 
     private void loadPlacesOnRecyclerView() {
@@ -69,10 +70,8 @@ public class ListViewActivity extends AppCompatActivity {
         rvLugares.setAdapter(adaptadorLugares);
     }
 
-    private void deletePlacesListener() {
+    private void deletePlacesListener(Context context) {
         //Borrado de lugares de la lista mediante gesto swipe simple (deslizar a izquierda o derecha)
-
-        Context thisContext = this;
 
         ItemTouchHelper.SimpleCallback simpleCallback = new ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT) {
             @Override
@@ -82,21 +81,21 @@ public class ListViewActivity extends AppCompatActivity {
 
             @Override
             public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int direction) {
-                AlertDialog.Builder builder = new AlertDialog.Builder(thisContext);
-                int position = viewHolder.getAdapterPosition();
-                String nombreLugar = lugares.get(position).getNombre();
+                AtomicInteger position = new AtomicInteger(viewHolder.getAdapterPosition());
+                AlertDialog.Builder builder = new AlertDialog.Builder(context);
+                PlaceVO lugarTemp = lugares.get(position.get());
+                String nombreLugar = lugarTemp.getNombre();
 
-                builder.setMessage("\n¿Estás seguro/a de eliminar el lugar '" + nombreLugar + "'?")
+                builder.setMessage("\n¿Deseas eliminar el lugar '" + nombreLugar + "'?")
                         .setTitle("Borrar lugar")
-                        .setPositiveButton("Sí", (dialog, which) -> {
-                            lugares.remove(position);
-                            adaptadorLugares.notifyItemRemoved(position);
-                            Toast.makeText(getApplicationContext(), "Se ha borrado el lugar '" + nombreLugar + "' satisfactoriamente", Toast.LENGTH_SHORT).show();
+                        .setPositiveButton("Sí", (dialog, which) ->
+                                Toast.makeText(context, "Se ha borrado el lugar '" + nombreLugar + "' satisfactoriamente", Toast.LENGTH_SHORT).show())
+                        .setNegativeButton("Cancelar", (dialog, which) -> dialog.cancel())
+                        .setOnCancelListener(dialog -> {
+                            adaptadorLugares.addPlace(lugarTemp, position.get());
+                            position.getAndIncrement();
                         })
-                        .setNegativeButton("Cancelar", (dialog, which) -> {
-                            dialog.cancel();
-                            rvLugares.setAdapter(adaptadorLugares);
-                        });
+                        .setOnDismissListener(dialog -> adaptadorLugares.removePlace(position.get()));
 
                 AlertDialog dialog = builder.create();
                 dialog.show();
@@ -113,9 +112,8 @@ public class ListViewActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-
-    public void goToForm(String nombreLugar, String descLugar) {
-        Toast.makeText(getApplicationContext(), "Ha elegido: " + nombreLugar, Toast.LENGTH_SHORT).show();
+    private void goToForm(String nombreLugar, String descLugar) {
+        //Toast.makeText(getApplicationContext(), "Ha elegido: " + nombreLugar, Toast.LENGTH_SHORT).show();
         Intent intent = new Intent(this, FormPlaceActivity.class);
         intent.putExtra("nombre", nombreLugar);
         intent.putExtra("descripcion", descLugar);

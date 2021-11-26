@@ -57,6 +57,16 @@ public class PlacesAdapter extends RecyclerView.Adapter<PlacesAdapter.ViewHolder
         }
     }
 
+    public void addPlace(PlaceVO place, int position) {
+        listaLugares.add(position, place);
+        this.notifyItemInserted(position);
+    }
+
+    public void removePlace(int position) {
+        listaLugares.remove(position);
+        this.notifyItemRemoved(position);
+    }
+
     public static class ViewHolder extends RecyclerView.ViewHolder {
         private final TextView txtNombre;
         private final TextView txtDescripcion;
