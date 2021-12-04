@@ -14,7 +14,7 @@ public class FormPlaceActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_form_place);
-
+        getSupportActionBar().hide();
         TextView nombre = findViewById(R.id.tv_nombreLugar);
         TextView descripcion = findViewById(R.id.tv_descLugar);
         PlaceVO lugarElegido = (PlaceVO) getIntent().getSerializableExtra("lugar");

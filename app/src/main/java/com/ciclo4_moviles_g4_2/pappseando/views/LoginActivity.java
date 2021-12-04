@@ -15,6 +15,7 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        getSupportActionBar().hide();
         Button inicia_sesion = findViewById(R.id.btn_inicio);
         inicia_sesion.setOnClickListener(new View.OnClickListener() {
             @Override

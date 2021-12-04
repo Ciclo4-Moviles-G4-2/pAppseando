@@ -23,9 +23,9 @@ public class MainActivity extends AppCompatActivity {
     private LinearLayout dotsLayout;
     private Button btnBack, btnNext;
 
-    private String[] content= {"Hola1", "Hola2", "Hola3", "Hola4"};
-    private String[] title= {"titulo1", "titulo2", "titulo3", "titulo4"};
-    private int[] image={R.drawable.inicio,R.drawable.prueba,R.drawable.prueba,R.drawable.prueba};
+    private String[] content= {"Pappseando es tu mejor opción para guardar tus lugares favoritos", "Pappseando utiliza el GPS de tu teléfono para darte ña ubicación precisa donde te encuentres", "Sobre el mapa y con un solo toque podrás agregar tu lugar favorito", "Agrega, elimina o comparte tus lugares favoritos"};
+    private String[] title= {"¡Bienvenido!", "Geolocalización", "¡Muy fácil!", "Cuando quieras"};
+    private int[] image={R.drawable.pin,R.drawable.prueba,R.drawable.prueba,R.drawable.prueba};
     private int[] colorBackground, colorDot;
     private TextView[] dots;
 
@@ -36,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        getSupportActionBar().hide();
         colorDot= getResources().getIntArray(R.array.array_dots);
         colorBackground= getResources().getIntArray(R.array.array_background);
         viewPager= findViewById(R.id.viewPager);
@@ -44,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
         dotsLayout= findViewById(R.id.layoutDots);
         addDot(0);
         loadViewPager();
+
 
         btnBack.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -118,6 +120,8 @@ public class MainActivity extends AppCompatActivity {
         return fragment;
     }
 
+
+
     ViewPager.OnPageChangeListener pagerListener=new ViewPager.OnPageChangeListener(){
 
         @Override
@@ -125,17 +129,19 @@ public class MainActivity extends AppCompatActivity {
 
         }
 
+
         @Override
         public void onPageSelected(int position) {
             addDot(position);
 
             if(position==title.length-1){
-                btnNext.setText("Finalizar");
-                btnBack.setText("Salir");
+                btnNext.setText("INICIAR");
+                btnNext.setVisibility(View.VISIBLE);
+
 
             }else{
-                btnNext.setText("Siguiente");
-                btnBack.setText("Atras");
+                btnBack.setVisibility(View.INVISIBLE);
+                btnNext.setVisibility(View.INVISIBLE);
             }
 
         }

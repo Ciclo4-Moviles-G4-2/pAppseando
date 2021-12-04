@@ -11,6 +11,7 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
 
 import com.ciclo4_moviles_g4_2.pappseando.R;
@@ -26,7 +27,7 @@ public class SliderFragment extends Fragment {
         imageAlejo = viewAlejo.findViewById(R.id.image);
         titleAlejo = viewAlejo.findViewById(R.id.textTitle);
         contentAlejo = viewAlejo.findViewById(R.id.textContent);
-        RelativeLayout background=viewAlejo.findViewById(R.id.Background);
+        ConstraintLayout background=viewAlejo.findViewById(R.id.Background);
         if(getArguments()!=null){
             titleAlejo.setText(getArguments().getString("title"));
             contentAlejo.setText(getArguments().getString("content"));

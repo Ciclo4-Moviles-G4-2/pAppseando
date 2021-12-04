@@ -22,7 +22,7 @@ public class RegisterActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
-
+        getSupportActionBar().hide();
         //        Inicio Validación de Datos en Registro de Usuario //
         et_Name=(EditText) findViewById(R.id.Name_Registration);
         et_mail=(EditText) findViewById(R.id.EmailAddress);
@@ -41,7 +41,7 @@ public class RegisterActivity extends AppCompatActivity {
         String cpassword= et_CPassword.getText().toString();
 
         if (nombre.length() != 0 && mail.length() != 0 && password.length() != 0 && cpassword.length() != 0) {
-            Toast.makeText(this, "Registro en Proceso", Toast.LENGTH_SHORT).show();
+
             Intent i= new Intent(RegisterActivity.this, LoginActivity.class);
             startActivity(i);
             Toast.makeText(getApplicationContext(),"Registro Exitoso",Toast.LENGTH_SHORT).show();
@@ -50,6 +50,11 @@ public class RegisterActivity extends AppCompatActivity {
         else {
             Toast.makeText(this, "Hay campos vacíos. Asegúrate de llenar todos los campos", Toast.LENGTH_SHORT).show();
         }
+
+
     }
     //        Fin Método Validadión de Datos en Registro de Usuario //
+
+
 }
+
