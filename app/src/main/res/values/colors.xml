@@ -19,7 +19,7 @@
 
     <!-- Paleta de colores -->
     <color name="primario">#2ab6b9</color>
-    <color name="secumdario">#fdc846</color>
+    <color name="secundario">#fdc846</color>
     <color name="color1">#7985f7</color>
     <color name="color2">#f78779</color>
     <color name="color3">#ffbc54</color>

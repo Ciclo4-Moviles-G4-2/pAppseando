@@ -16,10 +16,7 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.PAppseando">
-        <activity
-            android:name=".views.RecoveryActivity"
-            android:exported="false" />
+        android:theme="@style/Theme.Pappseando">
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
@@ -37,10 +34,13 @@
             android:exported="false" />
         <activity
             android:name=".views.LoginActivity"
-            android:exported="true" />
+            android:exported="false" />
         <activity
             android:name=".views.RegisterActivity"
-            android:exported="true" />
+            android:exported="false" />
+        <activity
+            android:name=".views.RecoveryActivity"
+            android:exported="false" />
         <activity
             android:name=".views.SliderFragment"
             android:exported="false"
@@ -50,7 +50,6 @@
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

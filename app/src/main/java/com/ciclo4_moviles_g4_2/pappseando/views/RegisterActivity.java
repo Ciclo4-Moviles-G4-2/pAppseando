@@ -59,7 +59,7 @@ public class RegisterActivity extends AppCompatActivity {
                                 startActivity(i);
                             }
                             else {
-                                Toast.makeText(RegisterActivity.this, "Hubo un error", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(RegisterActivity.this, "Hubo un error: " + task.getException(), Toast.LENGTH_SHORT).show();
                             }
                         }
                     });

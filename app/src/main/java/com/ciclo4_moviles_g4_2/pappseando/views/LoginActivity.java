@@ -19,21 +19,21 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class LoginActivity extends AppCompatActivity {
     FirebaseAuth firebaseAuth;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        getSupportActionBar().hide();
 
-        EditText email= findViewById(R.id.et_mail);
-        EditText password= findViewById(R.id.et_password);
-        Button Ingreso=findViewById(R.id.btn_Ingreso);
-        TextView etiqueta= findViewById(R.id.tv_registrarse);
-        TextView recuperacion= findViewById(R.id.txt_Remember_Password);
+        EditText email = findViewById(R.id.et_mail);
+        EditText password = findViewById(R.id.et_password);
+        Button ingreso = findViewById(R.id.btn_Ingreso);
+        TextView etiqueta = findViewById(R.id.tv_registrarse);
+        TextView recuperacion = findViewById(R.id.txt_Remember_Password);
 
-        firebaseAuth= FirebaseAuth.getInstance();
+        firebaseAuth = FirebaseAuth.getInstance();
 
-        Ingreso.setOnClickListener(new View.OnClickListener() {
+        ingreso.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if (email.getText().toString().isEmpty()) {
@@ -50,6 +50,8 @@ public class LoginActivity extends AppCompatActivity {
                                 startActivity(i);
                             } else {
                                 Toast.makeText(LoginActivity.this, "El usuario no existe", Toast.LENGTH_SHORT).show();
+                                //Intent i = new Intent(LoginActivity.this, MapsActivity.class);
+                                //startActivity(i);
                             }
                         }
                     });
@@ -58,24 +60,22 @@ public class LoginActivity extends AppCompatActivity {
         });
 
 
-    etiqueta.setOnClickListener(new View.OnClickListener() {
-        @Override
-        public void onClick(View v) {
-            Intent i = new Intent(LoginActivity.this, RegisterActivity.class);
-            startActivity(i);
-        }
+        etiqueta.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(LoginActivity.this, RegisterActivity.class);
+                startActivity(i);
+            }
 
-    });
+        });
+
         recuperacion.setOnClickListener(new View.OnClickListener() {
-        @Override
-        public void onClick(View v) {
-            Intent i = new Intent(LoginActivity.this, RecoveryActivity.class);
-            startActivity(i);
-        }
-    });
-
-
-
-}
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(LoginActivity.this, RecoveryActivity.class);
+                startActivity(i);
+            }
+        });
+    }
 
 }

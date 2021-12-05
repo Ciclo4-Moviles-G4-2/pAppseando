@@ -36,7 +36,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        getSupportActionBar().hide();
         colorDot= getResources().getIntArray(R.array.array_dots);
         colorBackground= getResources().getIntArray(R.array.array_background);
         viewPager= findViewById(R.id.viewPager);
