@@ -4,9 +4,11 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/MISION TIC 2022/CICLO 4/PROGRAMACION/PROYECTO CICLO 4/pAppseando/app/src/main/res/layout/activity_list_view.xml" value="0.1" />
-        <entry key="..\:/MISION TIC 2022/CICLO 4/PROGRAMACION/PROYECTO CICLO 4/pAppseando/app/src/main/res/layout/activity_login.xml" value="0.18" />
+        <entry key="..\:/MISION TIC 2022/CICLO 4/PROGRAMACION/PROYECTO CICLO 4/pAppseando/app/src/main/res/layout/activity_login.xml" value="0.25" />
         <entry key="..\:/MISION TIC 2022/CICLO 4/PROGRAMACION/PROYECTO CICLO 4/pAppseando/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/MISION TIC 2022/CICLO 4/PROGRAMACION/PROYECTO CICLO 4/pAppseando/app/src/main/res/layout/activity_maps.xml" value="0.175" />
+        <entry key="..\:/MISION TIC 2022/CICLO 4/PROGRAMACION/PROYECTO CICLO 4/pAppseando/app/src/main/res/layout/activity_recovery.xml" value="0.1765625" />
+        <entry key="..\:/MISION TIC 2022/CICLO 4/PROGRAMACION/PROYECTO CICLO 4/pAppseando/app/src/main/res/layout/activity_register.xml" value="0.25" />
         <entry key="..\:/MISION TIC 2022/CICLO 4/PROGRAMACION/PROYECTO CICLO 4/pAppseando/app/src/main/res/layout/fragment_slider.xml" value="0.18" />
         <entry key="..\:/MISION TIC 2022/CICLO 4/PROGRAMACION/PROYECTO CICLO 4/pAppseando/app/src/main/res/layout/place_card_view.xml" value="0.175" />
         <entry key="..\:/Users/electro/AndroidStudioProjects/pAppseando/app/src/main/res/drawable/ic_launcher_background.xml" value="0.35625" />

@@ -34,10 +34,10 @@
             android:exported="false" />
         <activity
             android:name=".views.LoginActivity"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".views.RegisterActivity"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".views.SliderFragment"
             android:exported="false"

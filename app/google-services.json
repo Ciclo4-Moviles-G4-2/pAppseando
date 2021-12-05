@@ -1,34 +1,33 @@
 {
   "project_info": {
-    "project_number": "1025972315471",
-    "firebase_url": "https://pappseando-default-rtdb.firebaseio.com",
-    "project_id": "pappseando",
-    "storage_bucket": "pappseando.appspot.com"
+    "project_number": "186006471767",
+    "project_id": "pappseando-a879c",
+    "storage_bucket": "pappseando-a879c.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:1025972315471:android:bcc3e0519c3d856a2ed13a",
+        "mobilesdk_app_id": "1:186006471767:android:bf89075d9c28af66ad0f12",
         "android_client_info": {
           "package_name": "com.ciclo4_moviles_g4_2.pappseando"
         }
       },
       "oauth_client": [
         {
-          "client_id": "1025972315471-qj8ea67n31nbm8t6h03891c9kavrfb86.apps.googleusercontent.com",
+          "client_id": "186006471767-6adr83mup2s1st6k8mk39ki3gili7515.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCxAkYWbhNc6b_aKhvKs92MZ0VtuxwPUpQ"
+          "current_key": "AIzaSyDKHGx1DDdZaQ5kTm2-myYtRxEtHHmZBs4"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "1025972315471-qj8ea67n31nbm8t6h03891c9kavrfb86.apps.googleusercontent.com",
+              "client_id": "186006471767-6adr83mup2s1st6k8mk39ki3gili7515.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
@@ -37,27 +36,27 @@
     },
     {
       "client_info": {
-        "mobilesdk_app_id": "1:1025972315471:android:fa4767622961d16e2ed13a",
+        "mobilesdk_app_id": "1:186006471767:android:e17aa056ed3d388ead0f12",
         "android_client_info": {
-          "package_name": "com.mintic.pappseando"
+          "package_name": "com.ciclo4_moviles_g4_2.photo_storage_test"
         }
       },
       "oauth_client": [
         {
-          "client_id": "1025972315471-qj8ea67n31nbm8t6h03891c9kavrfb86.apps.googleusercontent.com",
+          "client_id": "186006471767-6adr83mup2s1st6k8mk39ki3gili7515.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCxAkYWbhNc6b_aKhvKs92MZ0VtuxwPUpQ"
+          "current_key": "AIzaSyDKHGx1DDdZaQ5kTm2-myYtRxEtHHmZBs4"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "1025972315471-qj8ea67n31nbm8t6h03891c9kavrfb86.apps.googleusercontent.com",
+              "client_id": "186006471767-6adr83mup2s1st6k8mk39ki3gili7515.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

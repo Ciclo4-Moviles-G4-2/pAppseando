@@ -1,60 +1,73 @@
 package com.ciclo4_moviles_g4_2.pappseando.views;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
 import com.ciclo4_moviles_g4_2.pappseando.R;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class RegisterActivity extends AppCompatActivity {
-    // Validación de datos en Registro de Usuario //
-    private EditText et_Name;
-    private EditText et_mail;
-    private EditText et_Password;
-    private EditText et_CPassword;
-    //        Fin Validación de Datos en Registro de Usuario //
+    FirebaseAuth firebaseAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
-        getSupportActionBar().hide();
-        //        Inicio Validación de Datos en Registro de Usuario //
-        et_Name=(EditText) findViewById(R.id.Name_Registration);
-        et_mail=(EditText) findViewById(R.id.EmailAddress);
-        et_Password=(EditText) findViewById(R.id.Password);
-        et_CPassword=(EditText) findViewById(R.id.Confirm_Password);
-        //        Fin Validación de Datos en Registro de Usuario //
+        EditText email= findViewById(R.id.et_mail);
+        EditText password= findViewById(R.id.et_password);
+        Button Registro=findViewById(R.id.btn_Registro);
+        EditText confirmacion= findViewById(R.id.c_password);
 
+        firebaseAuth= FirebaseAuth.getInstance();
+
+        Registro.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String textMail= email.getText().toString();
+                String textPassword= password.getText().toString();
+                String textconfirmacion= confirmacion.getText().toString();
+
+                if (textMail.isEmpty()){email.setError("Requerido");
+
+                } else if (textPassword.isEmpty()) {password.setError("Requerido");
+                }
+                else if (textconfirmacion.isEmpty()) {
+                    confirmacion.setError("Requerido");
+
+                }
+                else if (!textconfirmacion.equals(textPassword)) {
+                    Toast.makeText(RegisterActivity.this, "Las contraseñas no coinciden", Toast.LENGTH_SHORT).show();
+
+                }
+                else {
+                    firebaseAuth.createUserWithEmailAndPassword(textMail, textPassword).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                        @Override
+                        public void onComplete(@NonNull Task<AuthResult> task) {
+                            if (task.isSuccessful()) {
+                                Toast.makeText(RegisterActivity.this, "Usuario Registrado", Toast.LENGTH_SHORT).show();
+                                Intent i = new Intent(RegisterActivity.this, LoginActivity.class);
+                                startActivity(i);
+                            }
+                            else {
+                                Toast.makeText(RegisterActivity.this, "Hubo un error", Toast.LENGTH_SHORT).show();
+                            }
+                        }
+                    });
+
+                }
+
+            }
+        });
     }
-
-
-    //        Inicio Método Validadión de Datos en Registro de Usuario //
-    public void siguiente ( View view) {
-        String nombre= et_Name.getText().toString();
-        String mail= et_mail.getText().toString();
-        String password= et_Password.getText().toString();
-        String cpassword= et_CPassword.getText().toString();
-
-        if (nombre.length() != 0 && mail.length() != 0 && password.length() != 0 && cpassword.length() != 0) {
-
-            Intent i= new Intent(RegisterActivity.this, LoginActivity.class);
-            startActivity(i);
-            Toast.makeText(getApplicationContext(),"Registro Exitoso",Toast.LENGTH_SHORT).show();
-
-        }
-        else {
-            Toast.makeText(this, "Hay campos vacíos. Asegúrate de llenar todos los campos", Toast.LENGTH_SHORT).show();
-        }
-
-
-    }
-    //        Fin Método Validadión de Datos en Registro de Usuario //
-
-
 }
 
