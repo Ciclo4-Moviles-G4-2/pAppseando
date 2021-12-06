@@ -67,8 +67,8 @@ public class FormPlaceActivity extends AppCompatActivity {
             coordEdit.setText(lugar.getLocation());
             descrEdit.setText(lugar.getDescripcion());
             photoRef = lugar.obtainImgRef();
-            if (lugar.getUriImg() != null)
-                putImageOnView(lugar.getUriImg());
+            if (lugar.getUrl() != null)
+                putImageOnView(lugar.getUrl());
         }
 
         btnCamara.setOnClickListener(v -> {
@@ -105,7 +105,7 @@ public class FormPlaceActivity extends AppCompatActivity {
             Intent intent = new Intent(FormPlaceActivity.this, ListViewActivity.class);
             if (!nombreNuevo.isEmpty() && !coordNuevas.isEmpty() && !descrNueva.isEmpty()) {
                 if (lugar != null)
-                    DBManager.updatePlaceFromDB(lugar.getId(), nombreNuevo, descrNueva, lugar.getUriImg());
+                    DBManager.updatePlaceFromDB(lugar.getId(), nombreNuevo, descrNueva, lugar.getUrl());
                 else
                     DBManager.putPlaceOnDB(nombreNuevo, descrNueva);
                 Toast.makeText(getApplicationContext(), "El lugar '" + nombreNuevo + "' se ha guardado exitosamente" , Toast.LENGTH_SHORT).show();
@@ -149,7 +149,7 @@ public class FormPlaceActivity extends AppCompatActivity {
         photoRef.getDownloadUrl().addOnSuccessListener(uri -> {
             String url = uri.toString();
             DBManager.putUriPlaceOnDB(lugar.getId(), url);
-            lugar.setUriImg(url);
+            lugar.setUrl(url);
             putImageOnView(url);
         })
                 .addOnFailureListener(exception -> {

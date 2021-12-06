@@ -19,7 +19,7 @@ public class PlaceVO implements Serializable {
     private String id;
     private String nombre;
     private String descripcion;
-    private String uriImg;
+    private String url;
     private float latitud;
     private float longitud;
 
@@ -74,11 +74,11 @@ public class PlaceVO implements Serializable {
         return descripcion;
     }
 
-    public String getUriImg() {
-        return uriImg;
+    public String getUrl() {
+        return url;
     }
 
-    public void setUriImg(String uriImg) {
-        this.uriImg = uriImg;
+    public void setUrl(String url) {
+        this.url = url;
     }
 }

@@ -48,7 +48,7 @@ public class ListViewActivity extends AppCompatActivity {
         deletePlacesListener(this);
     }
 
-    public void loadDefaultPlacesOnDB(View v) {
+    /*public void loadDefaultPlacesOnDB(View v) {
         //Carga/llenado de lugares en la base de datos
         if (lugares == null || lugares.size() == 0) {
             String[] nombreLugares = {"La Martina - Food Fast", "Parque del Café", "Mendihuacan Caribbean",
@@ -64,7 +64,7 @@ public class ListViewActivity extends AppCompatActivity {
                 DBManager.putPlaceOnDB(nombreLugares[i], descLugares[i]);
             loadPlacesOnRecyclerView();
         }
-    }
+    }*/
 
     private void loadPlacesOnRecyclerView() {
         //Carga/llenado de lugares obtenidos desde la DB en el Recycler View
@@ -79,8 +79,8 @@ public class ListViewActivity extends AppCompatActivity {
                         if (lugar.getId() == null) {
                             lugar.setId(ds.getKey());
                         }
-                        if (lugar.getUriImg() == null) {
-                            lugar.setUriImg((String) ds.child("url").getValue());
+                        if (lugar.getUrl() == null) {
+                            lugar.setUrl((String) ds.child("url").getValue());
                         }
                         lugares.add(lugar);
                     }
@@ -120,8 +120,8 @@ public class ListViewActivity extends AppCompatActivity {
                 builder.setTitle("Borrar lugar");
                 builder.setPositiveButton("Sí", (dialog, which) -> {
                     DBManager.deletePlaceFromDB(lugarTemp.getId());
-                    if (lugarTemp.getUriImg() != null)
-                        PlaceVO.storage.getReferenceFromUrl(lugarTemp.getUriImg()).delete().addOnSuccessListener(unused -> {
+                    if (lugarTemp.getUrl() != null)
+                        PlaceVO.storage.getReferenceFromUrl(lugarTemp.getUrl()).delete().addOnSuccessListener(unused -> {
                         });
                     Toast.makeText(context, "Se ha borrado el lugar '" + nombreLugar + "' satisfactoriamente", Toast.LENGTH_SHORT).show();
                 });

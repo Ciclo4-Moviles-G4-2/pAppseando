@@ -91,9 +91,16 @@ public class PlacesAdapter extends RecyclerView.Adapter<PlacesAdapter.ViewHolder
             txtNombre.setText(item.getNombre());
             txtDescripcion.setText(item.getDescripcion());
             StorageReference photoRef = item.obtainImgRef();
-            if (item.getUriImg() != null)
+            if (item.getUrl() != null)
                 Glide.with(itemView.getContext())
-                        .load(item.getUriImg())
+                        .load(item.getUrl())
+                        .fitCenter()
+                        .centerCrop()
+                        .circleCrop()
+                        .into(imgFoto);
+            else
+                Glide.with(itemView.getContext())
+                        .load(R.drawable.place)
                         .fitCenter()
                         .centerCrop()
                         .circleCrop()

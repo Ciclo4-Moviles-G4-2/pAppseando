@@ -31,7 +31,7 @@ public class DBManager {
 
     public static void updatePlaceFromDB(String placeId, String nombre, String descripcion, String url) {
         PlaceVO lugar = new PlaceVO(nombre, descripcion);
-        lugar.setUriImg(url);
+        lugar.setUrl(url);
         DatabaseReference idRef = myRef.child(placeId);
         idRef.setValue(null);
         idRef.setValue(lugar);
