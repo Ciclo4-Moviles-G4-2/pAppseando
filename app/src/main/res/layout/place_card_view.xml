@@ -18,15 +18,16 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#2AB6B9"
-        android:elevation="1dp"
         android:padding="12dp">
 
         <ImageView
             android:id="@+id/iv_place_image"
             android:layout_width="64dp"
             android:layout_height="64dp"
-            android:elevation="53dp"
-            android:src="@android:drawable/ic_menu_gallery" />
+            android:src="@android:drawable/ic_menu_gallery"
+            android:visibility="visible"
+            app:srcCompat="@drawable/place"
+            tools:visibility="visible" />
 
         <LinearLayout
             android:layout_width="match_parent"
