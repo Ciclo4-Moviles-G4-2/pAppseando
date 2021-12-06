@@ -39,7 +39,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
     private static final String TAG = MapsActivity.class.getSimpleName();
     private static final String KEY_CAMERA_POSITION = "camera_position";
     private static final String KEY_LOCATION = "location";
-    private static final String MAP_VIEW_BUNDLE_KEY = "AIzaSyDvdzT2bfN6yWjcAdxC75B5OLYHc1f07WY";
+    private static final String MAP_VIEW_BUNDLE_KEY = "AIzaSyDNTgNLazQYeRS3RXwLvmjNNDdEXrSiV2s";
 
 
     private GoogleMap mMap;

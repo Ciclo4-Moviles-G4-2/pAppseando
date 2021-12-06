@@ -12,5 +12,4 @@
     <string name="title_activity_maps_activity2borrarr">MapsActivity2borrarr</string>
     <string name="TextoEditText">¿No tienes cuenta? <u>Regístrate</u>.</string>
     <string name="TxtView_Password_Recovery"> <u>¿Olvidaste tu contraseña?</u>.</string>
-
 </resources>
