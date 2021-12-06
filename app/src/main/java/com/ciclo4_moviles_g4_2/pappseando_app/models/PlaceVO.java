@@ -4,31 +4,56 @@ package com.ciclo4_moviles_g4_2.pappseando_app.models;
    Implementado por: Mauricio Moreno
 */
 
+import android.net.Uri;
+import android.widget.Toast;
+
+import com.bumptech.glide.Glide;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+
 import java.io.Serializable;
 
 public class PlaceVO implements Serializable {
+
+    public static final FirebaseStorage storage = FirebaseStorage.getInstance();
     private String id;
     private String nombre;
     private String descripcion;
-    private int foto;
-    private String latitud;
-    private String longitud;
+    private String uriImg;
+    private float latitud;
+    private float longitud;
 
     //Constructores
 
-    public PlaceVO() {}
-
-    public PlaceVO(String nombre, String descripcion, int foto) {
-        this(null, nombre, descripcion, foto, null, null);
+    public PlaceVO() {
     }
 
-    public PlaceVO(String id, String nombre, String descripcion, int foto, String latitud, String longitud) {
+    public PlaceVO(String nombre, String descripcion) {
+        this(null, nombre, descripcion, 0, 0);
+    }
+
+    public PlaceVO(String id, String nombre, String descripcion) {
+        this(id, nombre, descripcion, 0, 0);
+    }
+
+    public PlaceVO(String id, String nombre, String descripcion, float latitud, float longitud) {
         this.id = id;
         this.nombre = nombre;
         this.descripcion = descripcion;
-        this.foto = foto;
         this.latitud = latitud;
         this.longitud = longitud;
+    }
+
+    //Métodos propios
+
+    public String getLocation() {
+        return Math.abs(latitud) + "° " + (latitud >= 0 ? "N" : "S") + ", " + Math.abs(longitud) + "° " + (longitud <= 0 ? "W" : "E");
+    }
+
+    public StorageReference obtainImgRef() {
+        if (id != null)
+            return storage.getReferenceFromUrl("gs://" + storage.getReference().getBucket() + "/imgTest/IMG" + id);
+        return null;
     }
 
     //Getters y setters
@@ -49,7 +74,11 @@ public class PlaceVO implements Serializable {
         return descripcion;
     }
 
-    public int getFoto() {
-        return foto;
+    public String getUriImg() {
+        return uriImg;
+    }
+
+    public void setUriImg(String uriImg) {
+        this.uriImg = uriImg;
     }
 }

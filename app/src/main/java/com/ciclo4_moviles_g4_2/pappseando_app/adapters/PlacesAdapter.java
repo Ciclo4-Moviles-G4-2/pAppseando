@@ -4,15 +4,24 @@ package com.ciclo4_moviles_g4_2.pappseando_app.adapters;
    Implementado por: Mauricio Moreno
 */
 
+import android.graphics.drawable.Drawable;
+import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.bumptech.glide.Glide;
 import com.ciclo4_moviles_g4_2.pappseando_app.R;
 import com.ciclo4_moviles_g4_2.pappseando_app.models.PlaceVO;
+import com.ciclo4_moviles_g4_2.pappseando_app.views.FormPlaceActivity;
+import com.google.firebase.storage.StorageReference;
 
 import java.util.List;
 
@@ -81,7 +90,14 @@ public class PlacesAdapter extends RecyclerView.Adapter<PlacesAdapter.ViewHolder
         void bindData(PlaceVO item) {
             txtNombre.setText(item.getNombre());
             txtDescripcion.setText(item.getDescripcion());
-            imgFoto.setImageResource(item.getFoto());
+            StorageReference photoRef = item.obtainImgRef();
+            if (item.getUriImg() != null)
+                Glide.with(itemView.getContext())
+                        .load(item.getUriImg())
+                        .fitCenter()
+                        .centerCrop()
+                        .circleCrop()
+                        .into(imgFoto);
         }
     }
 }

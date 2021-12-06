@@ -7,6 +7,7 @@ package com.ciclo4_moviles_g4_2.pappseando_app.views;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
@@ -22,6 +23,7 @@ import com.ciclo4_moviles_g4_2.pappseando_app.models.PlaceVO;
 import com.ciclo4_moviles_g4_2.pappseando_app.adapters.PlacesAdapter;
 import com.ciclo4_moviles_g4_2.pappseando_app.models.DBManager;
 
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.ValueEventListener;
@@ -58,9 +60,8 @@ public class ListViewActivity extends AppCompatActivity {
                     "Parque natural - Nemocón (Cundinamarca)", "Parque natural - La Macarena (Meta)", "Parque natural - Natagaima (Huila)",
                     "Sitio histórico - Paipa (Boyacá)", "Sitio histórico - Tunja (Boyacá)"};
 
-            DBManager.deleteAllPlacesFromDB();
             for (int i = 0; i < nombreLugares.length; i++)
-                DBManager.putPlaceOnDB(nombreLugares[i], descLugares[i], R.drawable.place);
+                DBManager.putPlaceOnDB(nombreLugares[i], descLugares[i]);
             loadPlacesOnRecyclerView();
         }
     }
@@ -75,8 +76,12 @@ public class ListViewActivity extends AppCompatActivity {
                     lugares = new ArrayList<>();
                     for (DataSnapshot ds : snapshot.getChildren()) {
                         PlaceVO lugar = ds.getValue(PlaceVO.class);
-                        if (lugar != null)
+                        if (lugar.getId() == null) {
                             lugar.setId(ds.getKey());
+                        }
+                        if (lugar.getUriImg() == null) {
+                            lugar.setUriImg((String) ds.child("url").getValue());
+                        }
                         lugares.add(lugar);
                     }
                     adaptadorLugares = new PlacesAdapter(lugares, R.layout.place_card_view);
@@ -111,18 +116,21 @@ public class ListViewActivity extends AppCompatActivity {
                 PlaceVO lugarTemp = lugares.get(position.get());
                 String nombreLugar = lugarTemp.getNombre();
 
-                builder.setMessage("\n¿Deseas eliminar el lugar '" + nombreLugar + "'?")
-                        .setTitle("Borrar lugar")
-                        .setPositiveButton("Sí", (dialog, which) -> {
-                            DBManager.deletePlaceFromDB(lugarTemp.getId());
-                            Toast.makeText(context, "Se ha borrado el lugar '" + nombreLugar + "' satisfactoriamente", Toast.LENGTH_SHORT).show();
-                        })
-                        .setNegativeButton("Cancelar", (dialog, which) -> dialog.cancel())
-                        .setOnCancelListener(dialog -> {
-                            adaptadorLugares.addPlace(lugarTemp, position.get());
-                            position.getAndIncrement();
-                        })
-                        .setOnDismissListener(dialog -> adaptadorLugares.removePlace(position.get()));
+                builder.setMessage("\n¿Deseas eliminar el lugar '" + nombreLugar + "'?");
+                builder.setTitle("Borrar lugar");
+                builder.setPositiveButton("Sí", (dialog, which) -> {
+                    DBManager.deletePlaceFromDB(lugarTemp.getId());
+                    if (lugarTemp.getUriImg() != null)
+                        PlaceVO.storage.getReferenceFromUrl(lugarTemp.getUriImg()).delete().addOnSuccessListener(unused -> {
+                        });
+                    Toast.makeText(context, "Se ha borrado el lugar '" + nombreLugar + "' satisfactoriamente", Toast.LENGTH_SHORT).show();
+                });
+                builder.setNegativeButton("Cancelar", (dialog, which) -> dialog.cancel());
+                builder.setOnCancelListener(dialog -> {
+                    adaptadorLugares.addPlace(lugarTemp, position.get());
+                    position.getAndIncrement();
+                });
+                builder.setOnDismissListener(dialog -> adaptadorLugares.removePlace(position.get()));
 
                 AlertDialog dialog = builder.create();
                 dialog.show();
