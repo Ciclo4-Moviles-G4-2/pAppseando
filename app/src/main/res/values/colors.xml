@@ -13,7 +13,7 @@
     <!-- Color Background -->
     <color name="background_1">#F78779</color>
     <color name="background_2">#FFBC54</color>
-    <color name="background_3">#79F3F7</color>
+    <color name="background_3">#A9E763</color>
     <color name="background_4">#7985F7</color>
 
 
@@ -33,10 +33,10 @@
 
 
     <array name="array_background">
-        <item>@color/background_1</item>
+        <item>@color/background_4</item>
         <item>@color/background_2</item>
         <item>@color/background_3</item>
-        <item>@color/background_4</item>
+        <item>@color/background_1</item>
     </array>
 
     <array name="array_dots">

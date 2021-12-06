@@ -17,16 +17,6 @@
             android:layout_height="wrap_content"
             android:fitsSystemWindows="true">
 
-            <com.google.android.material.appbar.MaterialToolbar
-                android:id="@+id/app_toolbar"
-                style="@style/Widget.MaterialComponents.Toolbar.PrimarySurface"
-                android:layout_width="match_parent"
-                android:layout_height="?attr/actionBarSize"
-                android:background="@color/purple_500"
-                android:onClick="loadDefaultPlacesOnDB"
-                app:navigationIconTint="@color/white"
-                app:navigationIcon="@drawable/ic_list_places"
-                app:title="Mis lugares - Lista" />
 
         </com.google.android.material.appbar.AppBarLayout>
 
@@ -35,18 +25,31 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="#2AB6B9"
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
         tools:context=".views.ListViewActivity">
+
+        <Button
+            android:id="@+id/btn_go_map2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="mapa"
+            app:cornerRadius="100dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_places"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginTop="4dp"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginTop="70dp"
+            android:background="#2AB6B9"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_go_map2"
             tools:itemCount="7"
             tools:listitem="@layout/place_card_view" />
 
@@ -54,15 +57,13 @@
             android:id="@+id/btn_go_map"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:backgroundTint="@color/purple_500"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            android:backgroundTint="@color/secundario"
             android:onClick="goToMap"
             android:src="@android:drawable/ic_dialog_map"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.98"
-            app:layout_constraintHorizontal_bias="0.95"
             app:tint="@color/white" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

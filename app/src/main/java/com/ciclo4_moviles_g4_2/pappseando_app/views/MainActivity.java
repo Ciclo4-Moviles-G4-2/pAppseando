@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
 
     private String[] content= {"Pappseando es tu mejor opción para guardar tus lugares favoritos", "Pappseando utiliza el GPS de tu teléfono para darte ña ubicación precisa donde te encuentres", "Sobre el mapa y con un solo toque podrás agregar tu lugar favorito", "Agrega, elimina o comparte tus lugares favoritos"};
     private String[] title= {"¡Bienvenido!", "Geolocalización", "¡Muy fácil!", "Cuando quieras"};
-    private int[] image={R.drawable.pin,R.drawable.prueba,R.drawable.prueba,R.drawable.prueba};
+    private int[] image={R.drawable.pin,R.drawable.map_marker,R.drawable.pngegg,R.drawable.mapcolor};
     private int[] colorBackground, colorDot;
     private TextView[] dots;
 

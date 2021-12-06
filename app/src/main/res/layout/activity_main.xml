@@ -30,6 +30,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
+        android:layout_marginRight="10sp"
         android:background="@null"
         android:text="Siguiente"
         android:textColor="@android:color/white"
