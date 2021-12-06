@@ -1,4 +1,4 @@
-package com.ciclo4_moviles_g4_2.pappseando.views;
+package com.ciclo4_moviles_g4_2.pappseando_app.views;
 
 /* Código Java para el manejo de la vista de lista de lugares
    Implementado por: Mauricio Moreno
@@ -17,10 +17,10 @@ import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.ciclo4_moviles_g4_2.pappseando.R;
-import com.ciclo4_moviles_g4_2.pappseando.models.PlaceVO;
-import com.ciclo4_moviles_g4_2.pappseando.adapters.PlacesAdapter;
-import com.ciclo4_moviles_g4_2.pappseando.models.DBManager;
+import com.ciclo4_moviles_g4_2.pappseando_app.R;
+import com.ciclo4_moviles_g4_2.pappseando_app.models.PlaceVO;
+import com.ciclo4_moviles_g4_2.pappseando_app.adapters.PlacesAdapter;
+import com.ciclo4_moviles_g4_2.pappseando_app.models.DBManager;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;

@@ -1,4 +1,4 @@
-package com.ciclo4_moviles_g4_2.pappseando.adapters;
+package com.ciclo4_moviles_g4_2.pappseando_app.adapters;
 
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;

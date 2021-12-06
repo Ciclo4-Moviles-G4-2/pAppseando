@@ -1,4 +1,4 @@
-package com.ciclo4_moviles_g4_2.pappseando.views;
+package com.ciclo4_moviles_g4_2.pappseando_app.views;
 
 import android.os.Bundle;
 
@@ -6,7 +6,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -14,7 +13,7 @@ import androidx.annotation.Nullable;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
 
-import com.ciclo4_moviles_g4_2.pappseando.R;
+import com.ciclo4_moviles_g4_2.pappseando_app.R;
 
 public class SliderFragment extends Fragment {
     View viewAlejo;

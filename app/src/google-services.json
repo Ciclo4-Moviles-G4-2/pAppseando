@@ -1,34 +1,34 @@
 {
   "project_info": {
-    "project_number": "1025972315471",
-    "firebase_url": "https://pappseando-default-rtdb.firebaseio.com",
-    "project_id": "pappseando",
-    "storage_bucket": "pappseando.appspot.com"
+    "project_number": "664158456872",
+    "firebase_url": "https://pappseando-app-default-rtdb.firebaseio.com",
+    "project_id": "pappseando-app",
+    "storage_bucket": "pappseando-app.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:1025972315471:android:bcc3e0519c3d856a2ed13a",
+        "mobilesdk_app_id": "1:664158456872:android:a79ef7a7a6af5849c5f91d",
         "android_client_info": {
-          "package_name": "com.ciclo4_moviles_g4_2.pappseando"
+          "package_name": "com.ciclo4_moviles_g4_2.pappseando_app"
         }
       },
       "oauth_client": [
         {
-          "client_id": "1025972315471-qj8ea67n31nbm8t6h03891c9kavrfb86.apps.googleusercontent.com",
+          "client_id": "664158456872-qu9p4phkpk1ucqtsq8798lpqgv6d2o77.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCxAkYWbhNc6b_aKhvKs92MZ0VtuxwPUpQ"
+          "current_key": "AIzaSyByUfPgrrfmvd1_nmsNfy34jH9ZWCpjYc8"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "1025972315471-qj8ea67n31nbm8t6h03891c9kavrfb86.apps.googleusercontent.com",
+              "client_id": "664158456872-qu9p4phkpk1ucqtsq8798lpqgv6d2o77.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

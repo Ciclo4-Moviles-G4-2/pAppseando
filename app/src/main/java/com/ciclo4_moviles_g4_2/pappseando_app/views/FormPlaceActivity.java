@@ -1,12 +1,12 @@
-package com.ciclo4_moviles_g4_2.pappseando.views;
+package com.ciclo4_moviles_g4_2.pappseando_app.views;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.widget.TextView;
 
-import com.ciclo4_moviles_g4_2.pappseando.R;
-import com.ciclo4_moviles_g4_2.pappseando.models.PlaceVO;
+import com.ciclo4_moviles_g4_2.pappseando_app.R;
+import com.ciclo4_moviles_g4_2.pappseando_app.models.PlaceVO;
 
 public class FormPlaceActivity extends AppCompatActivity {
 

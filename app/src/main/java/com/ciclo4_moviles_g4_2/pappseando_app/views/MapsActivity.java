@@ -1,6 +1,6 @@
-package com.ciclo4_moviles_g4_2.pappseando.views;
+package com.ciclo4_moviles_g4_2.pappseando_app.views;
 
-import static com.ciclo4_moviles_g4_2.pappseando.models.DBManager.*;
+import static com.ciclo4_moviles_g4_2.pappseando_app.models.DBManager.*;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -16,7 +16,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.ciclo4_moviles_g4_2.pappseando.R;
+import com.ciclo4_moviles_g4_2.pappseando_app.R;
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.maps.CameraUpdateFactory;

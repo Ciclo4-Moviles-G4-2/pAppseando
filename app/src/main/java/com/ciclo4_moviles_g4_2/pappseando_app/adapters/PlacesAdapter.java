@@ -1,4 +1,4 @@
-package com.ciclo4_moviles_g4_2.pappseando.adapters;
+package com.ciclo4_moviles_g4_2.pappseando_app.adapters;
 
 /* Código Java del adaptador usado en el RecyclerView para listar los lugares
    Implementado por: Mauricio Moreno
@@ -11,8 +11,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-import com.ciclo4_moviles_g4_2.pappseando.R;
-import com.ciclo4_moviles_g4_2.pappseando.models.PlaceVO;
+import com.ciclo4_moviles_g4_2.pappseando_app.R;
+import com.ciclo4_moviles_g4_2.pappseando_app.models.PlaceVO;
 
 import java.util.List;
 

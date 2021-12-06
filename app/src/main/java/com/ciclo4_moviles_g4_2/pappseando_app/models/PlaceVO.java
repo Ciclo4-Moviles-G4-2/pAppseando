@@ -1,4 +1,4 @@
-package com.ciclo4_moviles_g4_2.pappseando.models;
+package com.ciclo4_moviles_g4_2.pappseando_app.models;
 
 /* Código Java para el manejo de los objetos tipo lugar que serán usados por el adaptador de lista
    Implementado por: Mauricio Moreno

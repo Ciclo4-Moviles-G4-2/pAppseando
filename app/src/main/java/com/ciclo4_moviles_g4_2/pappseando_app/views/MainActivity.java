@@ -1,4 +1,4 @@
-package com.ciclo4_moviles_g4_2.pappseando.views;
+package com.ciclo4_moviles_g4_2.pappseando_app.views;
 
 import android.content.Intent;
 import android.graphics.Color;
@@ -13,8 +13,8 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 
-import com.ciclo4_moviles_g4_2.pappseando.R;
-import com.ciclo4_moviles_g4_2.pappseando.adapters.MyViewPagerAdapter;
+import com.ciclo4_moviles_g4_2.pappseando_app.R;
+import com.ciclo4_moviles_g4_2.pappseando_app.adapters.MyViewPagerAdapter;
 
 public class MainActivity extends AppCompatActivity {
 

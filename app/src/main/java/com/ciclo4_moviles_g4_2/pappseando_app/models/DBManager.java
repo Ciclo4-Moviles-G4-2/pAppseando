@@ -1,4 +1,4 @@
-package com.ciclo4_moviles_g4_2.pappseando.models;
+package com.ciclo4_moviles_g4_2.pappseando_app.models;
 
 import androidx.annotation.NonNull;
 
