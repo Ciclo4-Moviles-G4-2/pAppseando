@@ -113,7 +113,7 @@
         android:ems="10"
         android:hint="Ubicacion / Coordenadas"
         android:inputType="textPersonName"
-        android:textColor="#100F0F"
+        android:textColor="#FFFFFF"
         android:textColorHint="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Nombre" />
@@ -144,7 +144,7 @@
         android:ems="10"
         android:hint="Descripcion"
         android:inputType="textPersonName"
-        android:textColor="#100E0E"
+        android:textColor="#FFFFFF"
         android:textColorHint="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName3"

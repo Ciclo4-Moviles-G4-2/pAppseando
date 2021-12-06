@@ -9,6 +9,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -55,7 +56,7 @@ public class FormPlaceActivity extends AppCompatActivity {
         EditText coordEdit = findViewById(R.id.editTextTextPersonName3);
         EditText descrEdit = findViewById(R.id.editTextTextPersonName4);
         ImageButton btnCamara = findViewById(R.id.btnCamara);
-        ImageButton btnGuardar = findViewById(R.id.btnGuardar);
+        Button btnGuardar = findViewById(R.id.btnGuardar);
         progressMsg = new ProgressDialog(this);
 
         lugar = (PlaceVO) getIntent().getSerializableExtra("lugar");
